@@ -1,0 +1,340 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    position: relative;
+    transition: 0.5s ease-in-out;
+}
+body.lock-scroll {
+    position: fixed; 
+    overflow-y: scroll;
+}
+.loading{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    z-index: 10000;
+    transition: 0.5s;
+}
+.loading .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: top;
+    animation: open 1s ease-in-out 3s forwards;
+    background: #000;
+    z-index: 2;
+}
+
+@keyframes open {
+    0% {
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(0);
+    }
+}
+header {
+    position: relative;
+    width: 90%;
+    height: 100px;
+    margin: 0 auto;
+}
+.container {
+    width: 95%;
+    height: 80vh;
+    margin: 0 auto;
+}
+header .logo {
+    position: fixed;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    margin-top: 45px;
+    transition: 0.5s;
+    z-index: 10000;
+}
+header .logo img {
+    width: 30px;
+    height: auto;
+}
+header .logo p {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+header .logo p:last-child {
+    margin-top: -15px;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 4.5px;
+    color: #878A8F;
+}
+.logo:hover {
+    color: #878A8F;
+}
+.navbar-icon {
+    position: fixed;
+    margin-top: 25px;
+    margin-right: 70px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100px;
+    cursor: pointer;
+    z-index: 10000;
+}
+.menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+.menu span {
+    position: absolute;
+    left: -30px;
+    font-size: .8125rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    margin-right: 10px;
+    transition: 0.4s;
+    pointer-events: none;
+}
+.menu span:nth-child(2){
+    opacity: 0;
+    visibility: hidden;
+}
+.menu span.close {
+    opacity: 0;
+    visibility: hidden;
+}
+.menu span.open {
+    opacity: 1;
+    visibility: visible;
+}
+.hamburger div {
+    right: -30px;
+    position: relative;
+    width: 30px;
+    height: 3px;
+    border-radius: 1.5px;
+    background: #4e4e4e;
+    transition: 0.4s;
+}
+.hamburger div:before, .hamburger div:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 1.5px;
+    background: #4e4e4e;
+    transition: 0.2s;
+}
+.hamburger div:before {
+    top: -10px;
+}
+.hamburger div:after {
+    top: 10px;
+}
+.hamburger.open div {
+    transform: rotate(135deg);
+}
+.navbar-icon:hover .menu .hamburger div, .navbar-icon:hover .menu span{
+    color: #878A8F;
+} 
+ .navbar-icon:hover .menu .hamburger div, .navbar-icon:hover .menu .hamburger div:before, .navbar-icon:hover .menu .hamburger div:after {
+    background: #878A8F;
+}
+.navbar-icon.active:hover .menu .hamburger.open div {
+    transform: rotate(225deg);
+}
+.hamburger.open div:before {
+    transform: rotate(90deg);
+    top: 0;
+}
+.hamburger.open div:after {
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+
+nav {
+    position: fixed;
+    display: none;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    transition: 0.5s;
+    z-index: 100;
+    background: #ccc;
+    transition: 0.5s;
+}
+nav.open {
+    display: block;
+}
+nav h5 {
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #878a8f;
+    top: 24%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+nav p {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    bottom: 30px;
+    text-align: center;
+    font-size: .8rem;
+    font-weight: 400;
+    color: #878a8f;
+}
+nav p .fa.fa-heart {
+    font-size: 10px;
+}
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+ul li {
+    list-style-type: none;
+    width: 20%;
+}
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #878a8f;
+    display: inline-block;
+    margin: 8px 0;
+    transition: 0.5s;
+}
+nav ul li:hover a {
+    color: #fff;
+}
+
+ul li a:hover + img {
+    opacity: .5;
+    z-index: -1;
+    animation: zoom 30s linear forwards;
+}
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(2);
+    }
+}   
+nav img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: 0.5s;
+    opacity: 0;
+    pointer-events: none;
+}
+nav ul li a:before {
+    content: "";
+    position: absolute;
+    left: -150px;
+    top: 20px;
+    width: 200px;
+    height: 15px;
+    background: transparent;
+    transition: 0.4s ease-in-out;
+    transform: translateX(-300px);
+}
+nav ul li a:hover:before {
+    background: #fff;
+    width: 100px;
+    transform: translateX(20px);
+}
+.about {
+    padding-top: 100px;
+    width: 80%;
+    text-align: center;
+}
+.about h5 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 20px 0;
+    font-weight: 400;
+    letter-spacing: .4em;
+    color: #878a8f
+}
+.about h1 {
+    font-size: 2.75rem;
+    padding-top: 4px;
+    padding-bottom: 1px;
+    letter-spacing: .5px;
+}
+.about h3 {
+    font-size: 1.375rem;
+    padding: 20px 0;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #878a8f;
+}
+.skills {
+    margin-top: -500px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.skills .content {
+    width: 30%;
+    margin: 0 auto;
+}
+.skills .content h5 {
+    font-size: .875rem;
+    text-transform: uppercase;
+    padding: 15px 0;
+    font-weight: 400;
+    letter-spacing: .4em;
+    color: #878a8f;
+}
+.skills .content h3 {
+    font-size: 1.375rem;
+    padding: 20px 0;
+}
+.skills .content h3 em {
+    font-weight: 500;
+    color: #cfd0d2;
+    margin: 0 .625rem;
+    font-style: normal;
+}
+.skills hr {
+    width: 80%;
+    opacity: .5;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"/>
+</head>
+<body>
+    <!-- <section class="loading">
+        <div class="layer"></div>
+    </section> -->
+    <header>
+        <a href="/" class="logo"><p>Norrico Biason</p><br><p>Web Developer</p></a>
+        <div class="navbar-icon" onclick="toggle();">
+            <div class="menu">
+                <span>Menu</span>
+                <span>Close</span>
+                <div class="hamburger">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <h5>Menu</h5>
+        <ul>
+            <li><a href="#">Projects</a><img src="img/img1.jpg"></li>
+            <li><a href="about.html">About me</a><img src="img/img2.jpg"></li>
+            <li><a href="#">Contact</a><img src="img/img3.jpg"></li>
+            <li><a href="#">Instagram</a><img src="img/img4.jpg"></li>
+            <li><a href="#">Github</a><img src="img/img5.jpg"></li>
+        </ul>
+        <p>© 2019 — 2020 Norrico Biason. <i class="fa fa-heart"></i> in Laguna, Philippines.</p>
+    </nav>
+
+    <section class="about container">
+            <div class="content">
+                <h5>A few words about me</h5>
+                <h1>I'm Norrico Gerald M. Biason, a multidisciplinary web developer who focuses on learning and improving self. I specialize in responsive websites and functional user interfaces.</h1>
+                <h3>Over a year I have been studying to pursue a career that would enhance my capabilities and skills. In my spare time I enjoy photography, working-out, dancing, and motorcycle adventures.</h3>
+            </div>
+    </section>
+    <section class="skills container">
+            <div class="content">
+                <h5>Tools I use</h5>
+                <h3>Html <em> / </em>
+                    Css3 <em> / </em>
+                    Sass <em> / </em>
+                    JavaScript <em> / </em>
+                    Json <em> / </em>
+                    NodeJs <em> / </em>
+                    ExpressJs <em> / </em>
+                    ReactJs <em> / </em>
+                    Php <em> / </em>
+                    Laravel Github
+                </h3>
+            </div>
+            <hr>
+    </section>
+
+    <script>
+        let menuContainer = document.querySelector('.navbar-icon');
+        let hamburger = document.querySelector('.hamburger');
+        let menu = document.querySelector('.menu');
+        let span = menu.querySelectorAll('span');
+        let nav = document.querySelector('nav');
+        let body = document.querySelector('body');
+
+        function toggle() {
+            menuContainer.classList.toggle('active');
+            hamburger.classList.toggle('open');
+            span[0].classList.toggle('close');
+            span[1].classList.toggle('open');
+            nav.classList.toggle('open');
+
+            if (!body.classList.contains('lock-scroll')) {
+                body.classList.add('lock-scroll');
+            } else {
+                body.classList.remove('lock-scroll');
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norrico Biason</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"/>
+</head>
+<body>
+    <!-- <section class="loading">
+        <div class="layer"></div>
+    </section> -->
+    <header>
+        <a href="/" class="logo"><img src="img/My Logo v1.0.svg"><img src="img/Name-v1.0.svg"></a>
+        <div class="navbar-icon" onclick="toggle();">
+            <div class="menu">
+                <span>Menu</span>
+                <span>Close</span>
+                <div class="hamburger">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <h5>Menu</h5>
+        <ul>
+            <li><a href="#">Projects</a><img src="img/img1.jpg"></li>
+            <li><a href="about.html">About me</a><img src="img/img2.jpg"></li>
+            <li><a href="#">Contact</a><img src="img/img3.jpg"></li>
+            <li><a href="#">Instagram</a><img src="img/img4.jpg"></li>
+            <li><a href="#">Github</a><img src="img/img5.jpg"></li>
+        </ul>
+        <p>© 2019 — 2020 Norrico Biason. <i class="fa fa-heart"></i> in Laguna, Philippines.</p>
+    </nav>
+    <section class="hero container">
+        <div class="content-box">
+            <div class="content">
+                <h5>Norrico Biason</h5>
+                <h1>Web developer</h1>
+                <h3>Self-taught web developer over a year of experience in the search for a position where I can enhance my skillset in web technologies: Develop, innovate solutions and implement business needs.</h3>
+            </div>
+        </div>
+        <div class="img-box">
+            <img src="img/hero.png" alt="Hero">
+        </div>
+    </section>
+    <script>
+        let menuContainer = document.querySelector('.navbar-icon');
+        let hamburger = document.querySelector('.hamburger');
+        let menu = document.querySelector('.menu');
+        let span = menu.querySelectorAll('span');
+        let nav = document.querySelector('nav');
+        let body = document.querySelector('body');
+
+        function toggle() {
+            menuContainer.classList.toggle('active');
+            hamburger.classList.toggle('open');
+            span[0].classList.toggle('close');
+            span[1].classList.toggle('open');
+            nav.classList.toggle('open');
+
+            if (!body.classList.contains('lock-scroll')) {
+                body.classList.add('lock-scroll');
+            } else {
+                body.classList.remove('lock-scroll');
+            }
+        }
+
+    </script>
+</body>
+</html>
